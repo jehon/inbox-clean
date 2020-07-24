@@ -2,7 +2,7 @@
     "name": "inboxClean",
     "manifest_version": 2,
     "version": "0.0.3",
-    "key": "jpagcjhfbkbhfoflngomhlgelpheedae",
+    "key": "",
     "permissions": [
         "notifications",
         "storage",
