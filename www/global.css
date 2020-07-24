@@ -1,0 +1,141 @@
+/****************
+ * Genera structure
+ ****************/
+
+/* For menu spacing */
+body {
+	margin-top: 100px;
+}
+
+.container-fluid {
+	margin-top: 10px;
+}
+
+.messages-container {
+	padding: 10px;
+}
+
+css-flex {
+	/* https://css-tricks.com/snippets/css/a-guide-to-flexbox/ */
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+	align-content: center
+}
+
+.btn-big {
+	margin: 5px;
+	padding: 15px;
+	height: 70px;
+	display: inline-block;
+	border-radius: 15px;
+}
+
+img.adapt {
+	height: 100%;
+	width: auto;
+}
+
+/****************
+ * Structural context
+ ****************/
+body:not([with-extension]) .with-extension {
+	display: none;
+}
+
+body[with-extension] .without-extension {
+	display: none;
+}
+
+/****************
+ * General helpers
+ ****************/
+
+.icons {
+	color: lightgray;
+}
+
+.details {
+	color: lightgray;
+}
+
+.deleted,
+.deleted td,
+.deleted div {
+	text-decoration: line-through;
+}
+
+.deleted-msg {
+	color: red;
+	display: none;
+}
+
+.deleted .deleted-msg {
+	display: inline-block;
+}
+
+/* Truncate inside a table */
+
+.table-truncate {
+	position: relative;
+}
+
+.table-truncate-body {
+	position: absolute;
+	max-width: 95%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.icons-column {
+	width: 75px;
+}
+
+.number-column {
+	width: 2em;
+}
+
+.date-column {
+	width: 11ch;
+}
+
+.email-column {
+	width: 30ch;
+}
+
+/*********************
+/* Tooltips */
+/*********************/
+
+[data-tooltip] {
+	position: relative;
+	padding: 0;
+	margin: 0;
+}
+
+[data-tooltip]::after {
+	content: attr(data-tooltip);
+	font-size: 10px;
+	position: absolute;
+	z-index: 999;
+	white-space: nowrap;
+	bottom: 9999px;
+	left: 50%;
+	background: #000;
+	color: #e0e0e0;
+	padding: 0 7px;
+	line-height: 24px;
+	height: 24px;
+
+	/* dynamic */
+	opacity: 0;
+	transition: opacity 0.4s ease-out;
+}
+
+[data-tooltip]:hover::after {
+	opacity: 1;
+	bottom: 15px;
+}
+

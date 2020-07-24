@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Status</title>
+	<meta charset="utf-8" />
+
+	<script typte="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+	<script typte="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script typte="text/javascript" src="/node_modules/div-remote/div-remote.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="/node_modules/open-iconic/font/css/open-iconic-bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="global.css">
+</head>
+<body with-extension>
+	<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+		<div action="home" class="navbar-brand mr-2">Inbox Cleaner</div>
+		<div action="home" class="mr-2">Home</div>
+		<span class="mr-auto"></span>
+		<div data="category" class="navbar-text mr-2"></div>
+		<div data="email" class="navbar-text mr-2"></div>
+		<button id="signout-button" class="btn btn-outline-danger" hidden>Sign Out</button>
+		<div id="nav_extension" hidden>
+			<span class="oi oi-link-intact"></span>
+		</div>
+		<div id="nav_no_extension" style="height: 100%; padding-left: 20px;">
+				<span class="oi oi-link-broken"></span>
+		</div>
+	</nav>
+
+	<div class="container-fluid">
+		<div class="messages" id="messages">
+			<div class="messages-container">
+				<!-- Not connected -->
+				<div msgid="message_authenticate" class="alert alert-danger" hidden role="alert">
+					<span class="mr-auto">
+						You are currently not authenticated. Please authenticate with your account to <span data="email"></span>
+					</span>
+					<button id="authorize-button" class="btn btn-outline-dark">Authenticate</button>
+				</div>
+				<!-- Email forgotten -->
+				<div msgid="message_forgotten" class="alert alert-success alert-dismissible fade show" hidden role="info">
+					<span class="mr-auto">
+						Email <span data="email"></span> has been removed from your tracking
+					</span>
+				</div>
+				<!-- Emails empty -->
+				<div msgid="message_list_empty" class="alert alert-success alert-dismissible fade show" hidden role="info">
+					<span class="mr-auto">
+						No messages found. Good job: your inbox is clean!
+					</span>
+				</div>
+				<!-- Emails deleted -->
+				<div msgid="message_all_deleted_ok" class="alert alert-success alert-dismissible fade show" hidden role="info">
+					<span class="mr-auto">
+						Messages has been cleared. Please refresh to have the next messages...
+					</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="content"></div>
+
+	<hr>
+	<h2>Debug</h2>
+	<pre id="debug"></pre>
+	<div sync="input"></div>
+
+	<script type="module" src="status.js"></script>
+</body>
+</html>

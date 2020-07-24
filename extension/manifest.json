@@ -1,0 +1,25 @@
+{
+    "name": "inboxClean",
+    "manifest_version": 2,
+    "version": "0.0.3",
+    "key": "jpagcjhfbkbhfoflngomhlgelpheedae",
+    "permissions": [
+        "notifications",
+        "storage",
+        "alarms"
+    ],
+    "externally_connectable": {
+        "matches": [ 
+            "http://localhost:6060/*" 
+        ]
+    },
+    "background": {
+        "page": "background.html",
+        "persistent": false
+    },
+    "browser_action": {
+        "default_title": "inbox Clean",
+        "default_icon": "icon.png"
+    },
+    "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'"
+}
